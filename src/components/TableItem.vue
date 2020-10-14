@@ -18,12 +18,12 @@ export default {
 
 <style scoped>
   section{
-    width: 300px;
+    width: 270px;
     height: 150px;
     border-radius: 10px;
     border: 1px solid black;
-    padding: 5px;
-    margin-right: 15px;
+    padding: 10px;
+    margin: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
     
   }

@@ -60,7 +60,6 @@ export default {
       }]
       if(localStorage.Store){
         const local = JSON.parse(localStorage.getItem('Store'))
-        console.log(typeof local)
         obj.unshift(...local)
       }
       localStorage.setItem('Store', JSON.stringify(obj))
@@ -84,11 +83,14 @@ export default {
 }
 .form input[placeholder]{
   margin-bottom: 10px;
+  width: 25em;
+  height: 50px;
 }
 .form .checkboxes { 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 10px 0px;
 }
 .form .checkboxes .checkboxes_item{
   margin-right: 5px;
@@ -96,6 +98,6 @@ export default {
 }
 .btn{
   width: 10em;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 </style>

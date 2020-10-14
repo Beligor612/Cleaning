@@ -29,8 +29,8 @@ export default {
 
 <style scoped>
 .table{
-  padding: 25px;
-  margin: 15px;
+  padding: 5px;
+  margin: 15px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
