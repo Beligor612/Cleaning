@@ -19,7 +19,7 @@
             v-model='timeForClean'>{{time}}
     </template>
     </div>
-    <input type="button" value="Add" @click="Submit">
+    <input type="button" value="Add" @click="Submit" class="btn">
   </form>
 </template>
 
@@ -61,11 +61,9 @@ export default {
       if(localStorage.Store){
         const local = JSON.parse(localStorage.getItem('Store'))
         console.log(typeof local)
-        console.log('SUB');
-        obj.push(...local)
+        obj.unshift(...local)
       }
       localStorage.setItem('Store', JSON.stringify(obj))
-    console.log('SUB2');
     }
   }
 }
@@ -78,8 +76,14 @@ export default {
   justify-content: space-evenly;
   width: 500px;
   height: 200px;
-  margin: 0px auto;
-  border: 1px solid black
+  margin: 25px auto;
+  padding: 15px;
+}
+.form label{
+  margin-top: 10px;
+}
+.form input[placeholder]{
+  margin-bottom: 10px;
 }
 .form .checkboxes { 
   display: flex;
@@ -89,5 +93,9 @@ export default {
 .form .checkboxes .checkboxes_item{
   margin-right: 5px;
   margin-top: 5px;
+}
+.btn{
+  width: 10em;
+  margin: 0 auto;
 }
 </style>

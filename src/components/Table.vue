@@ -22,7 +22,6 @@ export default {
     if(localStorage.Store){
       const local = JSON.parse(localStorage.getItem('Store'))
       this.NamesOfLadys = local
-      console.log(this.NamesOfLadys)
     }
   }
 }
@@ -30,13 +29,11 @@ export default {
 
 <style scoped>
 .table{
-  border: 1px solid black;
-  border-radius: 10px;
   padding: 25px;
   margin: 15px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  
+
 }
 </style>
