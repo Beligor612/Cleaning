@@ -36,20 +36,22 @@ export default {
   const hour = date.getHours();
   const minute = date.getMinutes()
   const array = [];
-  if(hour > 8 && hour < 17){
-    for (let i = 8; i <= hour; i++) {
-      if(i!=hour){
+    for (let i = 8; i <= hour && i <= 17; i++) {
+      if(i!=hour && i!=17){
         for (let n = 0; n < 60; n += 15) {
         array.push(`${i}:${n == 0 ? "00" : n}`);
         }
-      } else{
+      } else if(i >= 17){
+        array.push(`17:00`);
+      }
+      else if(i==hour && i!=17){
+        console.log(i)
         for (let k = 0; k < minute; k += 15) {
         array.push(`${i}:${k == 0 ? "00" : k}`);
         }
-      }
+      } 
   } 
   this.time = array
-  }
 },
   methods: {
     Submit: function(){
@@ -63,7 +65,14 @@ export default {
         obj.unshift(...local)
       }
       localStorage.setItem('Store', JSON.stringify(obj))
+      this.resetForm()
+    },
+    resetForm: function(){
+      this.firstName = ''
+      this.secondName = ''
+      this.timeForClean = []
     }
+  
   }
 }
 </script>
